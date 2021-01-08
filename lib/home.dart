@@ -10,46 +10,50 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var userQuestion = '';
   var userAnswer = '';
-
-  final List<String> buttons = [
-    'AC',
-    'C',
-    '%',
-    '/',
-    '၇',
-    '၈',
-    '၉',
-    'x',
-    '၄',
-    '၅',
-    '၆',
-    '-',
-    '၁',
-    '၂',
-    '၃',
-    '+',
-    '၀',
-    '.',
-    'ANS',
-    '=',
+  List<String> buttons = [
+    "ရှင်းမယ်",
+    "ဖျက်ပါ",
+    "%",
+    "/",
+    "၇",
+    "၈",
+    "၉",
+    "x",
+    "၄",
+    "၅",
+    "၆",
+    "-",
+    "၁",
+    "၂",
+    "၃",
+    "+",
+    "၀",
+    ".",
+    "=",
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "သိပ္ပံနည်းကျဂဏန်းတွက်စက်",
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           Expanded(
             child: Container(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(
                     height: 30,
                   ),
                   Container(
-                    padding: EdgeInsets.all(30),
+                    padding: EdgeInsets.all(20),
                     alignment: Alignment.center,
                     child: Text(
                       userQuestion,
@@ -82,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       butoonTapped: () {
                         setState(() {
                           userQuestion = '';
+                          userAnswer = '';
                         });
                       },
                       buttonText: buttons[index],
@@ -119,6 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }
 
+                  ///ANS button
+
                   ////Rest of the buttons
                   else {
                     return MyButton(
@@ -154,7 +161,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void equalPressed() {
     String finalQuestion = userQuestion;
+
     finalQuestion = finalQuestion.replaceAll('x', '*');
+
+    finalQuestion = finalQuestion.replaceAll('၇', '7');
+
+    finalQuestion = finalQuestion.replaceAll('၈', '8');
+
+    finalQuestion = finalQuestion.replaceAll('၉', '9');
+
+    finalQuestion = finalQuestion.replaceAll('၄', '4');
+
+    finalQuestion = finalQuestion.replaceAll('၅', '5');
+
+    finalQuestion = finalQuestion.replaceAll('၆', '6');
+
+    finalQuestion = finalQuestion.replaceAll('၁', '1');
+
+    finalQuestion = finalQuestion.replaceAll('၂', '2');
+
+    finalQuestion = finalQuestion.replaceAll('၃', '3');
+
+    finalQuestion = finalQuestion.replaceAll('၀', '0');
+
     Parser p = Parser();
     Expression exp = p.parse(finalQuestion);
     ContextModel cm = ContextModel();
