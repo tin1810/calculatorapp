@@ -159,6 +159,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return false;
   }
 
+  String converttoBurmese(String userAnswer) {
+    String burmeseAnswer;
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'0'), '၀');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'1'), '၁');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'2'), '၂');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'3'), '၃');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'4'), '၄');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'5'), '၅');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'6'), '၆');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'7'), '၇');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'8'), '၈');
+    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'9'), '၉');
+    return burmeseAnswer;
+  }
+
   void equalPressed() {
     String finalQuestion = userQuestion;
 
@@ -187,7 +202,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Parser p = Parser();
     Expression exp = p.parse(finalQuestion);
     ContextModel cm = ContextModel();
-    double eval = exp.evaluate(EvaluationType.REAL, cm);
-    userAnswer = eval.toString();
+
+    var eval = exp.evaluate(EvaluationType.REAL, cm);
+
+    userAnswer = converttoBurmese(eval.toString());
   }
 }
