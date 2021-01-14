@@ -44,16 +44,18 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: <Widget>[
           Expanded(
+            flex: 0,
             child: Container(
               child: Column(
+                mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(
-                    height: 30,
+                    height: 8,
                   ),
                   Container(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.zero,
                     alignment: Alignment.center,
                     child: Text(
                       userQuestion,
@@ -171,6 +173,16 @@ class _HomeScreenState extends State<HomeScreen> {
     burmeseAnswer = userAnswer.replaceAll(new RegExp(r'7'), '၇');
     burmeseAnswer = userAnswer.replaceAll(new RegExp(r'8'), '၈');
     burmeseAnswer = userAnswer.replaceAll(new RegExp(r'9'), '၉');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'0'), '၀');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'1'), '၁');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'2'), '၂');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'3'), '၃');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'4'), '၄');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'5'), '၅');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'6'), '၆');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'7'), '၇');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'8'), '၈');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'9'), '၉');
     return burmeseAnswer;
   }
 
