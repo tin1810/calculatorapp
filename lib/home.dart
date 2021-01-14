@@ -162,15 +162,15 @@ class _HomeScreenState extends State<HomeScreen> {
   String converttoBurmese(String userAnswer) {
     String burmeseAnswer;
     burmeseAnswer = userAnswer.replaceAll(new RegExp(r'0'), '၀');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'1'), '၁');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'2'), '၂');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'3'), '၃');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'4'), '၄');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'5'), '၅');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'6'), '၆');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'7'), '၇');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'8'), '၈');
-    burmeseAnswer = userAnswer.replaceAll(new RegExp(r'9'), '၉');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'1'), '၁');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'2'), '၂');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'3'), '၃');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'4'), '၄');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'5'), '၅');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'6'), '၆');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'7'), '၇');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'8'), '၈');
+    burmeseAnswer = burmeseAnswer.replaceAll(new RegExp(r'9'), '၉');
     return burmeseAnswer;
   }
 
